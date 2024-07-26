@@ -5,6 +5,10 @@ name: Deploy to ACR/AKS.
 on: 
   workflow_dispatch
 
+permissions:
+  id-token: write
+  contents: read
+  
 # Your workflows jobs.
 jobs:
   build:
