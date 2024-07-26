@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydemo
+spec:
+  selector:
+    matchLabels:
+      app: mydemo
+  template:
+    metadata:
+      labels:
+        app: mydemo
+    spec:
+      containers:
+      - name: mydemo
+        image: mypocacr.azurecr.io/mydemo:${{ github.sha }}
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
