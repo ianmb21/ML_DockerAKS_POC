@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: mydemo
-        image: mypocacr.azurecr.io/mydemo:${{ github.sha }}
+        image: mypocacr.azurecr.io/mydemo:v1
         resources:
           limits:
             memory: "128Mi"

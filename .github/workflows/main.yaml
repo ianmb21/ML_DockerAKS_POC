@@ -8,7 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
-  
+
 # Your workflows jobs.
 jobs:
   build:
@@ -26,8 +26,8 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: |
-          docker build . -t mypocacr.azurecr.io/mydemo:${{ github.sha }}
-          docker push mypocacr.azurecr.io/mydemo:${{ github.sha }}
+          docker build . -t mypocacr.azurecr.io/mydemo:v1
+          docker push mypocacr.azurecr.io/mydemo:v1
       
       - uses: azure/login@v2
         with:
@@ -54,6 +54,6 @@ jobs:
               manifests/deployment.yml
               manifests/service.yml
           images: |
-              mypocacr.azurecr.io/mydemo:${{ github.sha }}
+              mypocacr.azurecr.io/mydemo:v1
           imagepullsecrets: |
               mydemo-secret
