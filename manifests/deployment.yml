@@ -19,5 +19,5 @@ spec:
             memory: "3564Mi"
             cpu: "2040m"
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         imagePullPolicy: Always
