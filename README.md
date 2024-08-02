@@ -12,3 +12,7 @@ Create a new environment
 ```
 conda create -p venv python==3.7 -y
 ```
+Additional references:
+https://www.youtube.com/watch?v=utBUfPYrJlU
+https://www.youtube.com/watch?v=KUECJHlV1LE
+https://www.youtube.com/watch?v=W8CZOUINxfo
